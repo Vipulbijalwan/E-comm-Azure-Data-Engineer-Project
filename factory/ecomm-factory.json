@@ -1,0 +1,9 @@
+{
+	"name": "ecomm-factory",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f3373098-ed61-421b-a46b-041f578ae13a",
+		"tenantId": "bf3c283d-dcc6-4636-b198-b65602399859"
+	}
+}
