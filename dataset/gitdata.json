@@ -1,0 +1,30 @@
+{
+	"name": "gitdata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpGithub",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"csv_url": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@dataset().csv_url",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
