@@ -1,0 +1,18 @@
+{
+	"name": "FileSqlHttp",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "MySql",
+		"typeProperties": {
+			"server": "fq61ix.h.filess.io",
+			"port": "61001",
+			"database": "olistproject_articlebow",
+			"username": "olistproject_articlebow",
+			"sslMode": 1,
+			"useSystemTrustStore": 0,
+			"driverVersion": "v2",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDE5QTMyN0JELTM1NjYtNEQ5OS05OTc2LUVBMjNDMjRENDUzMV85NzBlZWQ0Ni1kODcxLTRlOGEtYjg3Yi1hNzQyNjhkZmU4MmMiDQp9"
+		}
+	}
+}
