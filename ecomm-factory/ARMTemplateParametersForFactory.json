@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ecomm-factory"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"FileSqlHttp_password": {
+			"value": ""
+		},
+		"SQL_TO_ADLS_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://ecommstores.dfs.core.windows.net/"
+		},
+		"FileSqlHttp_properties_typeProperties_server": {
+			"value": "fq61ix.h.filess.io"
+		},
+		"FileSqlHttp_properties_typeProperties_database": {
+			"value": "olistproject_articlebow"
+		},
+		"FileSqlHttp_properties_typeProperties_username": {
+			"value": "olistproject_articlebow"
+		},
+		"HttpGithub_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"SQL_TO_ADLS_properties_typeProperties_url": {
+			"value": "https://ecommstores.dfs.core.windows.net/"
+		}
+	}
+}
