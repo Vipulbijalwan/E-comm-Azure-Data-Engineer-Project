@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT\n    TOP 100 *\nFROM \n    OPENROWSET(\n        BULK 'https://ecommstores.blob.core.windows.net/olistdata/silver/',\n        FORMAT = 'PARQUET'\n    )AS result1\n\n\nCREATE SCHEMA gold\n    CREATE VIEW gold.final\n    AS\n    SELECT\n     *\nFROM \n    OPENROWSET(\n        BULK 'https://ecommstores.blob.core.windows.net/olistdata/silver/',\n        FORMAT = 'PARQUET'\n    )AS result1\n\n\n    SELECT * \n    FROM gold.final",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "ecomm",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

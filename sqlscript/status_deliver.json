@@ -1,0 +1,17 @@
+{
+	"name": "status_deliver",
+	"properties": {
+		"content": {
+			"query": "\n    CREATE VIEW gold.final2\n    AS\n    SELECT\n     *\nFROM \n    OPENROWSET(\n        BULK 'https://ecommstores.blob.core.windows.net/olistdata/silver/',\n        FORMAT = 'PARQUET'\n    )AS result2\n    WHERE order_status ='delivered'\n\n    SELECT * FROM gold.final2\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "ecomm",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

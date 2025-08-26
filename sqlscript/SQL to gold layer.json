@@ -1,0 +1,17 @@
+{
+	"name": "SQL to gold layer",
+	"properties": {
+		"content": {
+			"query": "CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'VipulBijalwan@123';\nCREATE DATABASE SCOPED CREDENTIAL vipul WITH IDENTITY = 'Managed Identity';\n\nSELECT * FROM sys.database_credentials\n\nCREATE EXTERNAL FILE FORMAT extfileformat WITH (\n    FORMAT_TYPE = PARQUET,\n    DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'\n);\nCREATE EXTERNAL DATA SOURCE goldlayer WITH (\n    LOCATION = 'https://ecommstores.dfs.core.windows.net/olistdata/gold',\n    CREDENTIAL = vipul\n);\n\nCREATE EXTERNAL TABLE gold.finaltable WITH (\n        LOCATION = 'finalServing',\n        DATA_SOURCE = goldlayer,\n        FILE_FORMAT = extfileformat\n) AS\nSELECT * FROM gold.final2;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "ecomm",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
