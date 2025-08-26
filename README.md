@@ -1,85 +1,68 @@
-🛒 Ecomm Data Set – Azure Data Engineering Pipeline
-📌 Overview
+# 🛒 Ecomm Data Set – Azure Data Engineering Pipeline
 
-This project demonstrates a modern data engineering pipeline built on the E-commerce dataset using the Azure ecosystem.
-The pipeline ingests raw data, stores it in a data lake, processes it with Databricks, enriches it with MongoDB, and finally makes it available for analytics and visualization through Synapse and BI tools.
+## 📌 Overview
+This project demonstrates a modern **data engineering pipeline** for processing the **E-commerce dataset** using the Azure ecosystem.  
+The pipeline covers **data ingestion, transformation, enrichment, analytics, and visualization** using services like **Azure Data Factory, Azure Databricks, ADLS Gen2, Azure Synapse, and BI tools (Power BI/Tableau/Fabric).**
 
-⚙️ Architecture
+---
 
-🔹 Steps in the Pipeline
+## ⚙️ Architecture
 
-Data Sources
+<img width="1535" height="864" alt="Screenshot 2025-08-26 115311" src="https://github.com/user-attachments/assets/1e739449-d932-4382-99b2-45d1a6c6439f" />
 
-Input data comes from:
+### 🔹 Steps in the Pipeline
 
-HTTP/GitHub (Ecomm dataset)
+1. **Data Sources**
+   - Input data comes from:
+     - **HTTP/GitHub (Ecomm dataset)**
+     - **SQL Tables**
 
-SQL Tables
+2. **Data Ingestion – Azure Data Factory**
+   - Orchestrates data ingestion from GitHub/SQL.
+   - Stores raw data in **Azure Data Lake Storage Gen2 (ADLS Gen2)**.
 
-Data Ingestion (Azure Data Factory)
+3. **Raw Data Storage – ADLS Gen2**
+   - Acts as the **data lake (raw zone)**.
 
-Azure Data Factory orchestrates ingestion from multiple sources.
+4. **Data Transformation – Azure Databricks**
+   - Performs data cleaning, transformation, and enrichment.
+   - Joins with **MongoDB** tables for additional enrichment.
+   - Writes **processed data** back into **ADLS Gen2**.
 
-Raw data is landed into Azure Data Lake Storage Gen2 (ADLS Gen2).
+5. **Analytics Layer – Azure Synapse**
+   - Consumes transformed data for SQL-based queries and reporting.
 
-Raw Data Storage (ADLS Gen2)
+6. **Visualization Layer**
+   - Business insights are created using:
+     - **Power BI**
+     - **Tableau**
+     - **Microsoft Fabric**
 
-Stores the raw e-commerce dataset for further processing.
+---
 
-Data Transformation (Azure Databricks)
+## 🛠️ Tech Stack
 
-Raw data is cleaned, transformed, and enriched inside Databricks.
+- **Azure Data Factory (ADF)** → Data ingestion & orchestration
+- **Azure Data Lake Storage Gen2 (ADLS Gen2)** → Raw & processed data storage
+- **Azure Databricks** → Data transformation & enrichment
+- **MongoDB** → Enrichment data source
+- **Azure Synapse Analytics** → Analytics & SQL queries
+- **Visualization** → Power BI, Tableau, Fabric
 
-External MongoDB tables are used for additional enrichment.
+---
 
-Transformed data is saved back into ADLS Gen2.
+## 🚀 Workflow
 
-Analytics Layer (Azure Synapse)
+1. Ingest **Ecomm dataset** → **ADLS Gen2 (Raw Zone)** using **ADF**.
+2. Transform raw data in **Azure Databricks**:
+   - Cleaning
+   - Aggregation
+   - Enrichment (via MongoDB)
+3. Store transformed data in **ADLS Gen2 (Processed Zone)**.
+4. Load processed data into **Azure Synapse** for queries.
+5. Build dashboards with **Power BI/Tableau/Fabric**.
 
-Transformed data is consumed in Azure Synapse Analytics for querying and reporting.
+---
 
-Visualization Layer
+## 📂 Project Structure
 
-Business insights and dashboards are created using:
-
-Power BI
-
-Tableau
-
-Microsoft Fabric
-
-🛠️ Tech Stack
-
-Azure Data Factory (ADF) → Data ingestion
-
-Azure Data Lake Storage Gen2 (ADLS Gen2) → Data lake storage
-
-Azure Databricks → Data cleaning & transformation
-
-MongoDB → Enrichment data source
-
-Azure Synapse Analytics → Query and analytics
-
-Visualization → Power BI, Tableau, Fabric
-
-🚀 Workflow
-
-Ingest Ecomm dataset (from GitHub/SQL) → ADLS Gen2 (raw zone).
-
-Transform raw data in Databricks (cleaning, aggregation, enrichment).
-
-Save transformed data into ADLS Gen2 (processed zone).
-
-Load into Synapse for querying.
-
-Create dashboards in Power BI/Tableau/Fabric for decision-making.
-
-📊 Use Cases
-
-E-commerce sales trend analysis
-
-Customer behavior insights
-
-Product performance tracking
-
-Business reporting & visualization
